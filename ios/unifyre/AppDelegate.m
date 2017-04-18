@@ -19,7 +19,11 @@
 {
   NSURL *jsCodeLocation;
 
+#ifdef DEBUG
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+#else
+  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+#endif
   
   [[UITabBar appearance] setTintColor:[UIColor colorWithRed:1.00 green:0.09 blue:0.38 alpha:1.0]];
   [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBarBg"]];

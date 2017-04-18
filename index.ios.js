@@ -3,13 +3,15 @@ import {
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
-import FirstTabScreen from './FirstTabScreen.js';
+import FirstTabScreen from './containers/FirstTabScreen.js';
 import ActionInfo from './containers/ActionInfo.js';
+import CreateModal from './containers/createModal'
 
 // register all screens of the app (including internal ones)
 export function registerScreens() {
   Navigation.registerComponent('example.FirstTabScreen', () => FirstTabScreen);
   Navigation.registerComponent('example.ActionInfo', () => ActionInfo);
+  Navigation.registerComponent('example.CreateModal', () => CreateModal);
 }
 registerScreens();
 console.disableYellowBox = true;
@@ -34,10 +36,14 @@ const createTabs = () => {
       title: 'Screen Two',
     },
     {
-      screen: 'example.FirstTabScreen',
+      screen: 'example.CreateModal',
       icon: require('./images/addIcon.png'),
       selectedIcon: require('./images/addIcon.png'),
-      title: 'Screen Two',
+      title: 'New Unifyre',
+      navigatorStyle:{
+        tabBarHidden: true,
+        navBarHidden: true,
+      }
     },
     {
       screen: 'example.FirstTabScreen',
@@ -62,5 +68,5 @@ Navigation.startTabBasedApp({
     tabBarBackgroundColor: '#F9F9F9',
     tabBarSelectedButtonColor: '#FE165F',
   },
-
+  animationType: "slide-down",
 });

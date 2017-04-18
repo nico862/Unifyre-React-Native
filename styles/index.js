@@ -76,7 +76,43 @@ module.exports = {
 			fontSize: 12,
 			fontFamily: fontFamily,
 		}
-	})
+	}),
+	createUnifyre: StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: "column"
+    },
+    header: {
+      flex: .5,
+      position: "absolute",
+      top: 0,
+      paddingTop: 15,
+      fontSize: 20,
+      width: window.width,
+      height: 70,
+      flexDirection: "row",
+      backgroundColor: "#fff",
+      justifyContent: "center",
+      alignItems: 'center'
+    },
+    xIcon: {
+      width: 16,
+      height: 16,
+    },
 
+    bgImage: {
+      position: "absolute",
+      left: 0,
+      top: 0,
+      width: window.width,
+      height: window.height
+    },
+    headerText: {
+      width: "80%",
+      textAlign: "center",
+      fontFamily: fontFamilyBold,
+      fontSize: 26,
+    }
+  })
 };
 
