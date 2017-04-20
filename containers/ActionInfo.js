@@ -10,7 +10,8 @@ import {
   Image,
   ListView,
   PixelRatio,
-  StatusBar
+  StatusBar,
+  AlertIOS
 } from 'react-native';
 
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
@@ -34,6 +35,28 @@ export default class ActionInfo extends Component {
 
       ])
     };
+
+
+    this.props.navigator.setOnNavigatorEvent(function(event) {
+      console.log(event);
+
+      if (event.type == 'NavBarButtonPress') { 
+
+          if (event.id == 'Close') { 
+            
+            let ret = this.props.navigator.dismissModal({
+              animationType: 'slide-down' 
+            });
+
+            this.props.navigator.switchToTab({
+              tabIndex: 0 
+            });
+
+          }
+
+      }
+
+    }.bind(this));
   }
 
   goBack() {

@@ -1,5 +1,6 @@
 import {
-  Platform
+  Platform,
+  NativeEventEmitter
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
@@ -64,3 +65,5 @@ Navigation.startTabBasedApp({
   },
 
 });
+
+
