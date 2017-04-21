@@ -5,8 +5,10 @@ import {Navigation} from 'react-native-navigation';
 
 import FirstTabScreen from './containers/FirstTabScreen.js';
 import ActionInfo from './containers/ActionInfo.js';
-import CreateModal from './containers/createModal'
-import NewUnifyreScreen from './containers/NewUnifyreScreen'
+import CreateModal from './containers/createModal';
+import NewUnifyreScreen from './containers/NewUnifyreScreen';
+import ModalScreen from './containers/ModalScreen';
+
 
 
 // register all screens of the app (including internal ones)
@@ -15,6 +17,7 @@ export function registerScreens() {
   Navigation.registerComponent('example.ActionInfo', () => ActionInfo);
   Navigation.registerComponent('example.CreateModal', () => CreateModal);
   Navigation.registerComponent('unifyre.NewUnifyreScreen', () => NewUnifyreScreen);
+  Navigation.registerComponent('unifyre.ModalScreen', () => ModalScreen);
 
 }
 registerScreens();
@@ -37,7 +40,7 @@ const createTabs = () => {
       title: 'Screen Two',
     },
     {
-      screen: 'unifyre.NewUnifyreScreen',
+      screen: 'unifyre.ModalScreen',
       icon: require('./images/addIcon.png'),
       selectedIcon: require('./images/addIcon.png'),
       title: 'New Unifyre',

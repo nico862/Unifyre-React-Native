@@ -11,6 +11,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import Button from '../components/common/Button';
 
 class NewUnifyreScreen extends PureComponent {
+
+  
+
   static navigatorButtons = {
     leftButtons: [{
       icon: require('../images/x-icon.png'),
@@ -32,16 +35,13 @@ class NewUnifyreScreen extends PureComponent {
     tabBarButtonColor: 'black'
   };
 
+
   componentWillMount() {
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
 
-  onNavigatorEvent(event) {
+  onNavigatorEvent = (event) => {
     switch (event.id) {
-      case 'cancel':
-        Alert.alert('NavBar', 'Cancel button pressed');
-        break;
-      
       case 'close':
         this.props.navigator.dismissModal({
           animationType: 'slide-down' // 'none' / 'slide-down' , dismiss animation for the modal (optional, default 'slide-down')
@@ -52,6 +52,8 @@ class NewUnifyreScreen extends PureComponent {
         console.log('PushedScreen', 'Unknown event ' + event.id);
     }
   }
+
+
 
   
   render() {
